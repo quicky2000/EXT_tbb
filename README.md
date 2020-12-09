@@ -1,5 +1,7 @@
 # EXT_tbb
 
+Continuous integration with [Travis-Ci](https://travis-ci.org/quicky2000/EXT_tbb) : ![Build Status](https://travis-ci.org/quicky2000/EXT_tbb.svg?branch=master)
+
 Quicky tools wrapper for TBB library.
 
 License
@@ -11,9 +13,18 @@ CMake module has been obtained thanks to Contributors to the [OpenVDB Project](h
 TBB library
 -----------
 
-Official documentation can be found here: https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onetbb.html
+Official documentation can be found here:
+https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onetbb.html
 
 To install it on Debian based distributions:
 ```bash
 sudo apt-get install libtbb-dev
 ```
+
+Build
+-----
+Build process is the same used in [Travis file](.travis.yml)
+
+Reference build can be found [here](https://travis-ci.org/quicky2000/EXT_tbb)
+
+
