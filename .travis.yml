@@ -4,15 +4,14 @@ matrix:
       sudo: required
       dist: focal
       compiler: gcc
-    - os: osx
-      osx_image: xcode10.3
 
 language: cpp
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update; sudo apt-get install -y libtbb-dev g++-10 gcc-10 ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10 ; sudo update-alternatives --set gcc /usr/bin/gcc-10 ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install tbb ; fi
+  - sudo apt-get update
+  - sudo apt-get install -y libtbb-dev g++-10 gcc-10
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10
+  - sudo update-alternatives --set gcc /usr/bin/gcc-10
   - MY_LOCATION=`pwd`
   - mkdir ../repositories
   - cd ..
@@ -30,7 +29,8 @@ before_install:
   - cd build
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mkdir quicky_tools; cd quicky_tools; generate_makefile EXT_tbb ; make; ./bin/EXT_tbb.exe ; cd .. ; fi
+  - mkdir quicky_tools; cd quicky_tools; generate_makefile EXT_tbb
+  - make; ./bin/EXT_tbb.exe ; cd ..
   - mkdir cmake
   - cd cmake
   - cmake $QUICKY_REPOSITORY/EXT_tbb
