@@ -1,6 +1,6 @@
 # EXT_tbb
 
-Continuous integration with [Travis-Ci](https://travis-ci.org/quicky2000/EXT_tbb) : ![Build Status](https://travis-ci.org/quicky2000/EXT_tbb.svg?branch=master)
+Continuous integration with [Travis-Ci](https://app.travis-ci.com/github/quicky2000/EXT_tbb) : ![Build Status](https://travis-ci.org/quicky2000/EXT_tbb.svg?branch=master)
 
 Quicky tools wrapper for TBB library.
 
@@ -25,6 +25,6 @@ Build
 -----
 Build process is the same used in [Travis file](.travis.yml)
 
-Reference build can be found [here](https://travis-ci.org/quicky2000/EXT_tbb)
+Reference build can be found [here](https://app.travis-ci.com/github/quicky2000/EXT_tbb)
 
 
